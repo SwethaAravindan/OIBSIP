@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scribblings' Stationary</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #6ef805;
+    color: #f4f8f4;
+}
+
+header {
+    background-color: #070c07;
+    color: #025307;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    color: #fbf7f7;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #a2a1a1;
+}
+
+.hero {
+    background-image: url('restaurant_hero.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #121010;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    animation: pulse 1.5s infinite;
+}
+
+.cta-button:hover {
+    background-color: #535252;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+/* Menu Section Styles */
+.menu {
+    padding: 40px;
+    background-color: #fff;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-heading {
+    font-size: 1.8rem; 
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #090909;
+    padding: 15px 50px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.menu-item {
+    text-align: center;
+    background-color: #070707;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(7, 6, 6, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px;
+    perspective: 800px;
+}
+
+.menu-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: transform 0.6s;
+    box-shadow: 0 0 10px rgba(36, 116, 5, 0.8);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.menu-item h2 {
+    font-size: 1.3rem; 
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.menu-item:hover {
+    box-shadow: 0 0 20px rgba(241, 246, 242, 0.7);
+    transform: translateY(-5px);
+}
+
+.menu-item:hover img {
+    transform: rotateY(180deg);
+}
+
+.menu-item:hover h2 {
+    color: #37f108;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.about-section {
+    background-color: #fff;
+    color: #090808;
+    text-align: center;
+    padding: 40px;
+}
+
+.about-section h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0c0c0c;
+    padding: 15px 50px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 400px;
+    margin-right: 40px;
+    overflow: hidden; 
+}
+
+.about-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transform: translateY(5px); 
+}
+
+.about-text {
+    flex: 2;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #070707;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #060606;
+}
+
+.contact-section {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 40px;
+}
+
+.contact-section h2 {
+    margin-top: 0;
+}
+
+.contact-section p {
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    display: block;
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .cta-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #162d14;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    font-family: 'Arial', sans-serif;
+    cursor: pointer;
+}
+
+.contact-form .cta-btn:hover {
+    background-color: #6c6262;
+}
+
+footer {
+    background-color: #080808;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Scribblings' Stationary</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Items</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to our Shop</h1>
+            <p>Explore our whimsical world of cute stationary, crafted to delight and inspire the imagination of little ones.</p>
+            <a href="#menu" class="cta-button">Show Me All</a>
+        </div>
+    </section>
+    <hr>
+    <br>
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="about.jpg" alt="about">
+                </div>
+                <div class="about-text">
+                    <h2>Unleash Creativity at Scribblings</h2>
+                    <p> Welcome to Scribblings - Your Creative Haven!<br>
+                        
+                        At Scribblings, we believe in the magic of expression and the joy of discovery. Established with a passion for nurturing creativity in young minds, our journey began with the simple idea that every stroke of a pen could be a masterpiece in the making.<br>
+                        
+                        Our Story:<br>
+                        Scribblings was born from a desire to provide a haven for children to explore and express their unique creativity. Our founders, driven by their own love for art and stationery, envisioned a place where every product would not just be a tool but a companion in the wonderful journey of learning and self-discovery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <h2 class="section-heading">Featured Items</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="pop.jpg" alt="Dosa">
+                <h2>Popsicle Gel Pen</h2>
+            </div>
+            <div class="menu-item">
+                <img src="panda.jpg" alt="idly">
+                <h2>Panda Spiral Diary</h2>
+            </div>
+            <div class="menu-item">
+                <img src="donut.jpg" alt="chappati">
+                <h2>Animal Donut Eraser</h2>
+            </div>
+            <div class="menu-item">
+                <img src="we.jpg" alt="poori">
+                <h2>We-Bare-Bear Highlighter</h2>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <br><br>
+            <h2>Have any questions or concerns? Feel free to reach out to us.</h2>
+            <form class="contact-form" action="#" method="post">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" rows="4" required></textarea>
+                <button type="submit" class="cta-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <br>
+    <footer>
+        <p>&copy; 2024 Scribblings' Stationary. All rights reserved</p>
+    </footer>
+</body>
+</html>
